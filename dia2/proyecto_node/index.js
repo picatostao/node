@@ -6,5 +6,5 @@ let read2=require("readline")
 
 
 read.readConsole((paco)=>{
-    werite.writeAndReadasinc("personil.json",paco)
+    werite.writeAndRead("personil.json",paco)
 })
