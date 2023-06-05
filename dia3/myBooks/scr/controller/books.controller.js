@@ -18,7 +18,7 @@ function getIdBook(request,response){
     let book= books.find((book)=> book.id_book==bookId);
     console.log("LIBRO ENCONTRADO", book);
     if (book){
-        respuesta=book;
+        respuesta=book; 
     }else{
         respuesta={error:true, codigo:200, mensaje:"no existe libro"};
         console.log("LIBRO NO ENCONTRADO"); 
