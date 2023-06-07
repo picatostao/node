@@ -17,7 +17,7 @@ function getIdBook(request,response){
     console.log("LIBROS ACTUALES:", books);
     let book= books.find((book)=> book.id_book==bookId);
     console.log("LIBRO ENCONTRADO", book);
-    if (book){
+    if (book!=null||book===undefined||book===" "){
         respuesta=book; 
     }else{
         respuesta={error:true, codigo:200, mensaje:"no existe libro"};
@@ -76,10 +76,8 @@ function putBooks(request,response){
     let respuesta;
     console.log('ACTUALIZACIÓN:');
     console.log(request.body);
-    let bookId=request.body.id_book
-    let bookIndex=books.findIndex((book1)=>book1.id_book===bookId);
-    if(bookIndex!==-1){
-    let update=books[bookIndex]
+    let update=books.find((update)=>update.id_book==request.body.id_book);
+    if(update){
     update.title=request.body.title
     update.type=request.body.type
     update.author=request.body.author
