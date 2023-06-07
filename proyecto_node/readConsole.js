@@ -20,6 +20,7 @@ rl.question("nombre?:", (name)=>{
             persona.age=parseInt(age);
                     rl.close()
                     callback(persona)
+                    console.log(persona)
                 });
             });
         });
